@@ -1,26 +1,36 @@
 const core = require("@actions/core");
 const fetch = require("node-fetch");
-
-(aysnc () => {
+(async () => {
   try {
     const payload = {
       channel: `${core.getInput("channel")}`,
       attachments: [
         {
-          color: status === "success" ? "#2e993e" : status === "failure" ? "#bd0f26" : "#d29d0c",
+          color:
+            status === "success"
+              ? "#2e993e"
+              : status === "failure"
+              ? "#bd0f26"
+              : "#d29d0c",
           blocks: [
             {
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: `Github Action: *${status === "success" ? "SUCCESS" : status === "failure" ? "FAILURE" : "CANCELLED"}*`,
+                text: `Github Action: *${
+                  status === "success"
+                    ? "SUCCESS"
+                    : status === "failure"
+                    ? "FAILURE"
+                    : "CANCELLED"
+                }*`,
               },
             },
           ],
         },
       ],
     };
-
+    // Call slack api
     const rest = await fetch("https://slack.com/api/chat.postMessage", {
       method: "POST",
       body: JSON.stringify(payload),
