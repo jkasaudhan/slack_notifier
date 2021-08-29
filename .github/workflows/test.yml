@@ -16,7 +16,7 @@ jobs:
         with:
           job-status: ${{ job.status }}
           slack-bot-token: ${{ secrets.SLACK_TOKEN }}
-          channel: some-slack-channel
+          channel: random
   test_ko:
     runs-on: ubuntu-latest
     name: Test the action on failure
