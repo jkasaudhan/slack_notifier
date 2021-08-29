@@ -45,6 +45,7 @@ const fetch = require("node-fetch");
     if (!res.ok) {
       throw new Error(`Server error ${res.status}`);
     }
+    core.setOutput(JSON.stringify(res));
   } catch (error) {
     core.setFailed(error.message);
   }
