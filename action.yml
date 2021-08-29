@@ -7,6 +7,8 @@ inputs:
     description: 'Bot token used to send messages'
   channel:
     description: 'Channel where the messages are sended'
+  slack-webhook-url:
+    description: 'Slack webhook url where the messages are sended'
 runs:
   using: 'node12'
   main: 'index.js'
