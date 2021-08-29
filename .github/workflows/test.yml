@@ -16,6 +16,7 @@ jobs:
         with:
           job-status: ${{ job.status }}
           slack-bot-token: ${{ secrets.SLACK_TOKEN }}
+          slack-webhook-url: ${{ secrets.TEST_SLACK_WEBHOOK_URL }}
           channel: random
   test_ko:
     runs-on: ubuntu-latest
@@ -32,4 +33,5 @@ jobs:
         with:
             job-status: ${{ job.status }}
             slack-bot-token: ${{ secrets.SLACK_TOKEN }}
+            slack-webhook-url: ${{ secrets.TEST_SLACK_WEBHOOK_URL }}
             channel: random
