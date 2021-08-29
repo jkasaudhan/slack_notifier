@@ -1,6 +1,7 @@
 const core = require("@actions/core");
 const fetch = require("node-fetch");
 (async () => {
+  const status = "success";
   try {
     const payload = {
       channel: `${core.getInput("channel")}`,
