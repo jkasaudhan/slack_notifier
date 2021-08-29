@@ -32,7 +32,7 @@ const fetch = require("node-fetch");
       ],
     };
     // Call slack api
-    const rest = await fetch("https://slack.com/api/chat.postMessage", {
+    const res = await fetch("https://slack.com/api/chat.postMessage", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
